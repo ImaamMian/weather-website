@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel= "stylesheet" href = "index.css">
+    <title>Imaams Weather Website</title>
+</head>
+<body>
+    <div class="container">
+        <div class="info">
+            <div class="date-container">
+                <div class="time" id="time">
+                12:21<span id="am-pm">PM</span>
+                </div>
+
+                <div class="date" id="date">12 March</div>
+
+                <div class="others" id="currentWeather">
+                    <div class="weatherItem">
+                        <div>Humidity</div>
+                        <div id="humidity">23.6%</div>
+                    </div>
+
+                    <div class="weatherItem">
+                        <div>UV Index</div>
+                        <div id = "UVIndex">97</div>
+                    </div>
+
+                    <div class="weatherItem">
+                        <div>WindSpeed</div>
+                        <div id="windspeed">121</div>
+                    </div>
+
+                    <div class="weatherItem">
+                        <div>Cloudy</div>
+                        <div id="Cloudy">40%</div>
+                    </div>
+
+                    <div class="weatherItem">
+                        <div>Condition</div>
+                        <div id="Condition">Patchy freezing drizzle possible</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="placeContainer">
+                <div class="timeZone" id="timeZone">Auckland</div>
+                <div class="country" id="country">New Zealand</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="sevendayforecast">
+        <div class="today" id="currentTemp">
+            <img src="https://cdn2.iconfinder.com/data/icons/weather-flat-14/64/weather02-512.png" alt="Weather Icon" class="weatherIcon" id="todayImage">
+            <div class="other">
+                <div class="day" id="today-day">Monday</div>
+                <div class="temp" id = "todayTemp">Temperature - 35.6&#176; C</div>
+                <div class="temp" id="todayFeelLike">Feels Like - 24.2&#176; C</div>
+            </div>
+        </div>
+        <div class="weatherForecast" id="forecast">
+            <div class="forecastItem">
+                <div class="day">Tue</div>
+                <img src="https://cdn2.iconfinder.com/data/icons/weather-flat-14/64/weather02-512.png" alt="Weather Icon" class="weatherIcon">
+                <div class="temp">Day - 35.6&#176; C</div>
+                <div class="temp">Night - 24.2&#176; C</div>
+            </div>
+        
+
+        
+            <div class="forecastItem">
+                <div class="day">Wed</div>
+                <img src="https://cdn2.iconfinder.com/data/icons/weather-flat-14/64/weather02-512.png" alt="Weather Icon" class="weatherIcon">
+                <div class="temp">Day - 35.6&#176; C</div>
+                <div class="temp">Night - 24.2&#176; C</div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="index.js"></script>
+</body>
+</html>

@@ -234,6 +234,19 @@ function changeCity() {
     document.getElementById("SearchBar").value = ""
   }
 }
+
+document.getElementById("SearchBar").addEventListener('keyup', (e) => {
+  if(e.key == 'Enter'){
+    if(document.getElementById("SearchBar").value!=null && document.getElementById("SearchBar").value!=""){
+      city = document.getElementById("SearchBar").value
+      getWeather()
+      sevenDayWeather()
+      document.getElementById("SearchBar").value = ""
+    }
+  }
+})
+
+
 /*
 searchBar.addEventListener('keyup', (e) => {
   console.log(e.target.value)

@@ -200,4 +200,46 @@ body{
 
 }
 
+input.searchBar{
+    border: none;
+    outline: none;
+    padding:0.5em 0.8em;
+    border-radius: 20px;
+    background: #7c7c7c2b;
+    color: white;
+    font-family: inherit;
+    font-size: 120%;
+    width:600px
+}
+button{
+    margin: 0.5em;
+    border-radius: 30%;
+    border: none;
+    height: 3.5em;
+    width: 3.5em;
+    outline: none;
+    background: #7c7c7c2b;
+    color: white;
+    cursor: pointer;
+}
+button:hover{
+    background-color:white;
+    color:black;
+    transition: 0.3s ease-in-out;
+}
+
+
+
+::placeholder { 
+    color: white;
+    opacity: 0.6; 
+  }
+  
+  :-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: white;
+  }
+  
+  ::-ms-input-placeholder { /* Microsoft Edge */
+    color: white;
+  }
 

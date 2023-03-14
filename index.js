@@ -180,7 +180,7 @@ const showWeather = (res) =>{
 } 
 
 const getWeather = () =>{
-    navigator.geolocation.getCurrentPosition(showPosition);
+    //navigator.geolocation.getCurrentPosition(showPosition);
     //var city = 'auckland'
 
     fetch( `https://api.weatherapi.com/v1/current.json?key=114557f6f1744cb3a4403405222007&q=${city}`)
@@ -198,7 +198,7 @@ function showPosition(position) {
 
 
 const sevenDayWeather = () =>{
-  navigator.geolocation.getCurrentPosition(showPosition);
+  //navigator.geolocation.getCurrentPosition(showPosition);
   //var city = 'auckland'
 
   fetch( `https://api.weatherapi.com/v1/forecast.json?key=114557f6f1744cb3a4403405222007&q=${city}&days=7&aqi=no&alerts=no`)

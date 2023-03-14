@@ -39,17 +39,32 @@ const changeTime = (res) =>{
   //alert(newDate.toLocaleString('en-US', options));
 
   const time = new Date().toLocaleString ('en-US', {hour12: false, timeZone: dynamicTimeZone });
-
+  
   //alert(time)
   //11/17/2022, 16:21:08
+  const timeParts = time.split(':');
+  //alert(timeParts)
+  let hours = timeParts[0].slice(-2);  // extract last 2 characters to handle leading zero
+  if (hours == 24) {
+    hours = 0;  // set to 0 for midnight
+  }
+  let hr12format = hours >= 13 ? hours %12: hours
+  hr12format = hr12format == 0 ? 12 : hr12format;
+  const minutes = timeParts[1];
+  const seconds = timeParts[2].slice(0, 2);
+  const AMorPM = hours>=12 ? 'PM' : 'AM'
 
+
+  /*
   const month = time.substring(0, 2)
-  const date = time.substring(3, 5)
+  let date = time.substring(3, 5)
   const day = res.day_of_week
   const hour = time.substring(12, 14)
-  let hr12format = hour >= 13 ? hour %12: hour
   const minute = time.substring(15, 17)
-  const AMorPM = hour>=12 ? 'PM' : 'AM'
+
+  if(date.charAt(date.length - 1) == "/"){
+    date = date.charAt(0)
+  }*/
   
   if(AMorPM == 'PM' && hr12format<10){
     hr12format = '0' + hr12format
@@ -62,8 +77,32 @@ const changeTime = (res) =>{
   //const minute = new Date().getMinutes().toLocaleString('en-US', { timeZone: dynamicTimeZone })
   //const AMorPM = hour>=12 ? 'PM' : 'AM'
 
-  MainTime.innerHTML = hr12format + ':' + minute+ ' ' + `<span id="am-pm">${AMorPM}</span>`
-  MainDate.innerHTML = days[day] + ', ' + date+ ' ' + months[month]
+  //MainTime.innerHTML = hr12format + ':' + minute+ ' ' + `<span id="am-pm">${AMorPM}</span>`
+  
+  MainTime.innerHTML = `${hr12format}:${minutes}` + `<span id="am-pm">${AMorPM}</span>`
+
+  const date = time.split(',');
+  const NewDate = date[0].split("/")
+  const day = NewDate[1]
+  const month = NewDate[0]
+  const year = NewDate[2]
+  //alert(NewDate)
+
+
+
+  const options = {
+    weekday: 'long',
+    day: 'numeric',
+    month: 'long',
+  };
+  const formattedDate = new Date(time).toLocaleDateString('en-US', options);
+  MainDate.innerHTML = formattedDate;
+
+
+
+
+  //MainDate.innerHTML =  day  + " "+ months[month] +" "+ year
+  // MainDate.innerHTML = days[day] + ', ' + date+ ' ' + months[month]
 
 }
 
@@ -257,4 +296,5 @@ searchBar.addEventListener('keyup', (e) => {
     getItems();
   }
 })*/
+
 
